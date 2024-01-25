@@ -9,4 +9,4 @@ spring:
     hibernate:
       ddl-auto: create-drop # ten parametr odpowiada za sposób generowania struktury bazy danych
   application:
-    name: students
+    name: library

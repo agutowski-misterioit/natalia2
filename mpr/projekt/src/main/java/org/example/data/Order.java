@@ -3,6 +3,7 @@ package org.example.data;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "`order`")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -11,6 +12,14 @@ public class Order {
     private double totalPrice;
     private String customerName;
     private String shippingAddress;
+
+    public Order(){}
+    public Order(Integer quantity, double totalPrice, String customerName, String shippingAddress){
+        this.quantity = quantity;
+        this.totalPrice = totalPrice;
+        this.customerName = customerName;
+        this.shippingAddress = shippingAddress;
+    }
 
     @ManyToOne
     private Book book;

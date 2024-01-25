@@ -1,11 +1,9 @@
 package org.example.data;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "`book`")
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,6 +13,16 @@ public class Book {
     private String category;
     private double price;
     private int quantityInStock;
+
+    public Book() {}
+
+    public Book(String title, String author, String category, Double price, Integer quantityInStock){
+        this.title = title;
+        this.author = author;
+        this.category = category;
+        this.price = price;
+        this.quantityInStock = quantityInStock;
+    }
 
     // Getters
     public Long getId() {

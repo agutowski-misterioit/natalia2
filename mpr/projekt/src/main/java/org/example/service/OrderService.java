@@ -49,7 +49,7 @@ public class OrderService {
 
     private OrderDTO convertToDTO(Order order) {
         OrderItemDTO item = new OrderItemDTO(order.getBook().getId(), order.getQuantity(), order.getBook().getPrice());
-        return new OrderDTO(order.getId(), order.getCustomerName(), order.getShippingAddress(), Arrays.asList(item));
+        return new OrderDTO(order.getId(), order.getCustomerName(), order.getShippingAddress(), List.of(item));
     }
 }
 

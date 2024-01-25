@@ -29,14 +29,14 @@ public class OrderControllerTest {
 
     @Test
     public void getOrdersByCustomer_Success() throws Exception {
-        List<OrderItemDTO> items1 = Arrays.asList(
+        List<OrderItemDTO> items1 = List.of(
                 new OrderItemDTO(1L, 2, 29.99)  // Assuming price per book
         );
-        List<OrderItemDTO> items2 = Arrays.asList(
+        List<OrderItemDTO> items2 = List.of(
                 new OrderItemDTO(2L, 1, 24.99)  // Assuming price per book
         );
 
-        List<OrderDTO> mockOrders = Arrays.asList(
+        List<OrderDTO> mockOrders = List.of(
                 new OrderDTO(1L, "John Doe", "123 Maple Street", items1),
                 new OrderDTO(2L, "Jane Smith", "456 Oak Lane", items2)
         );
